@@ -71,7 +71,7 @@ var el = (function() {
 
     var extraClasses = [];
 
-    var topParent; 
+    var topParent;
     var result;
     selectors.split(/ +/g).forEach(function(selector) {
       var parts = selector.split(/([#.])/g);
