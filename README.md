@@ -43,14 +43,6 @@ of the last two arguments may be omitted.
 
     All escaping is handled by the browser.
 
-    If a value is an observable, el will automatically **subscribe** to it,
-    updating the attribute whenever the observable changes.
-
-    If you give an observable to the **value** property, el will set up
-    appropriate `change` event listeners. This is handy for elements like
-    `input` and `select`. (This doesn't work for computeds, since they can't be
-    assigned.)
-
     To bind **event handlers**, use special <code>on_*«event»*</code>
     attributes:
 
