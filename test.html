@@ -1,0 +1,15 @@
+<div id='test'></div>
+
+<script src='koel.js'></script>
+<script>
+
+var tree = el('h1', {
+  style: 'color: dodgerblue',
+}, [
+  'It ',
+  el('span', { style: 'color: red' }, 'works!')
+])
+
+document.getElementById('test').appendChild(tree)
+
+</script>
