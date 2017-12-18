@@ -71,7 +71,7 @@ var el = (function() {
 
     var extraClasses = [];
 
-    var topParent;
+    var topParent; 
     var result;
     selectors.split(/ +/g).forEach(function(selector) {
       var parts = selector.split(/([#.])/g);
@@ -93,16 +93,14 @@ var el = (function() {
       result = el;
     });
 
-    var classList = attrs.class;
-    delete attrs.class;
+    var classList = attrs.classList || [];
+    delete attrs.classList;
     if (attrs.className) {
-      if (classList) throw "Can't set class twice";
-      classList = attrs.className;
+      if (classList.length) throw "Can't set class twice";
+      classList = attrs.className.split(' ');
       delete attrs.className;
     }
-    if (attrs.classList) {
-      throw "Use .class instead";
-    }
+    topParent.classList.add(...classList, ...extraClasses);
 
     for (key in attrs) {
       bindProperty(result, key, attrs[key]);

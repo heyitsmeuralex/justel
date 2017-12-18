@@ -3,8 +3,10 @@
 <script src='justel.js'></script>
 <script>
 
-var tree = el('h1', {
+var tree = el('h1.ok', {
   style: 'color: dodgerblue',
+  className: 'test',
+  //classList: [ 'haha', 'yes' ],
 }, [
   'It ',
   el('span', { style: 'color: red' }, 'works!')
